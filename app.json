@@ -3,7 +3,6 @@
     "name": "HabitForge",
     "slug": "HabitForge",
     "version": "1.0.0",
-    "owner": "david0401",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
