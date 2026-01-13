@@ -9,6 +9,7 @@ import {
   FlatList,
   StatusBar,
   ScrollView,
+  Image,
 } from 'react-native';
 
 const PURPLE = '#7C3AED';
@@ -191,7 +192,14 @@ export default function App() {
 
   const renderAuthScreen = () => (
     <View style={styles.section}>
-      <Text style={[styles.sectionSubtitle, { color: secondaryText }]}>
+      <View style={styles.logoContainer}>
+        <Image
+          source={require('./assets/icon.png')}
+          style={styles.appIcon}
+        />
+      </View>
+      <Text style={[styles.homeTitle, { color: PURPLE, marginTop: 16 }]}>HabitForge</Text>
+      <Text style={[styles.sectionSubtitle, { color: secondaryText, marginTop: 8 }]}>
         {authMode === 'login'
           ? 'Войди, чтобы продолжить свой путь привычек.'
           : 'Создай аккаунт и начни формировать новые привычки.'}
@@ -302,7 +310,13 @@ export default function App() {
 
   const renderHome = () => (
     <View style={styles.section}>
-      <Text style={[styles.homeTitle, { color: PURPLE }]}>🔥 HabitForge</Text>
+      <View style={styles.logoContainer}>
+        <Image
+          source={require('./assets/icon.png')}
+          style={styles.appIcon}
+        />
+      </View>
+      <Text style={[styles.homeTitle, { color: PURPLE }]}>HabitForge</Text>
       <Text style={[styles.homeSubtitle, { color: secondaryText }]}>
         Фитнес-трекер привычек с ответственностью
       </Text>
@@ -1028,6 +1042,21 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 999,
     backgroundColor: 'rgba(239, 68, 68, 0.1)',
+  },
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  appIcon: {
+    width: 120,
+    height: 120,
+    borderRadius: 24,
+    shadowColor: PURPLE,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
   },
   homeTitle: {
     fontSize: 26,
